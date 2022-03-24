@@ -108,7 +108,7 @@ SSH into the control node and follow the steps below:
   
 - Update line 3, the hosts line, in [filebeat-playbook.yml](https://github.com/nabouneama/Project-1-Elk-Stack/blob/main/Ansible/roles/filebeat-playbook.yml) and the [intall-elk.yml](https://github.com/nabouneama/Project-1-Elk-Stack/blob/main/Ansible/install2-elk.yml) to identify which vm each playbook will be downloaded on.
  
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
+- Run the playbook, and navigate to http://52.225.73.227:5601/app/kibana to check that the installation worked as expected.
 
 _TODO: Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? Where do you copy it?_
