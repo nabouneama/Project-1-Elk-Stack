@@ -110,9 +110,24 @@ SSH into the control node and follow the steps below:
  
 - Run the playbook, and navigate to http://52.225.73.227:5601/app/kibana to check that the installation worked as expected.
 
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running?
-
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+- cp ansible.cfg /etc/ansible
+- nano hosts
+    [webservers]
+    10.0.0.5 ansible_python_interpreter=/usr/bin/python3
+    10.0.0.6 ansible_python_interpreter=/usr/bin/python3
+    
+    [elk]
+    10.1.0.4 ansible_python_interpreter=/usr/bin/python3
+- exit hosts
+- nano [filebeat-playbook.yml](https://github.com/nabouneama/Project-1-Elk-Stack/blob/main/Ansible/roles/filebeat-playbook.yml)
+    -  go to line 3 and write (hosts: webservers)
+- exit yaml file (ctrl + x) 
+- mv filebeat-playbook.yml /etc/ansible/roles
+- ls roles to make sure it moved 
+
+- nano [intall-elk.yml](https://github.com/nabouneama/Project-1-Elk-Stack/blob/main/Ansible/install2-elk.yml)
+    - go to line 3 and write (hosts: elk)
+- exit yaml file (ctrl + x) 
+- ansible-playbook filebeat-playbook.yml
+- ansible-playbook install2-elk.yml
