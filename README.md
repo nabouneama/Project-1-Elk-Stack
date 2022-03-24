@@ -37,9 +37,9 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 
 | Name     | Function                                  | IP Address | Operating System |
 |----------|----------------------------------------------------------|------------|------------------|
-| Jump Box | Gateway                                                  | 10.0.0.1   | Linux            |
-| WEB 1    | Accessing the cloud & accepts requests from web browsers | 10.0.0.4   | Linux            |
-| WEB 2    | Accessing the cloud & accepts requests from web browsers | 10.0.0.5   | Linux            |
+| Jump Box | Gateway                                                  | 10.0.0.4   | Linux            |
+| WEB 1    | Accessing the cloud & accepts requests from web browsers | 10.0.0.5   | Linux            |
+| WEB 2    | Accessing the cloud & accepts requests from web browsers | 10.0.0.6   | Linux            |
 | ELK vm   | Record logs from systems and applications                | 10.1.0.4   | Linux            |
 
 ### Access Policies
