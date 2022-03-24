@@ -26,39 +26,40 @@ The main purpose of this network is to expose a load-balanced and monitored inst
 
 Load balancing ensures that the application will be highly _____, in addition to restricting _____ to the network.
 - Load balancers distributes and divide the network traffic onto many servers which help increase the capacity of the users. They protect and ensures the availability of the information if one server went down or crashed. 
-- A jumpbox is a system on a network that is used to access all the information needed on a different network. It is used to protect the information and limit the people who have access to the information.
+- A jumpbox is a system on a network that is used to access all the information needed within a more secured machine. It is used to protect the information and limit the people who have access to the information.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
-- _TODO: What does Filebeat watch for?_
-- _TODO: What does Metricbeat record?_
+- Filebeat collects and records log files and forwards them to logstach or elastic search.
+- Metricbeat records metrics and statistics from teh system and services on the server.
 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
-| Name     | Function | IP Address | Operating System |
-|----------|----------|------------|------------------|
-| Jump Box | Gateway  | 10.0.0.1   | Linux            |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
+| Name     | Function                                  | IP Address | Operating System |
+|----------|----------------------------------------------------------|------------|------------------|
+| Jump Box | Gateway                                                  | 10.0.0.1   | Linux            |
+| WEB 1    | Accessing the cloud & accepts requests from web browsers | 10.0.0.4   | Linux            |
+| WEB 2    | Accessing the cloud & accepts requests from web browsers | 10.0.0.5   | Linux            |
+| ELK vm   | Record logs from systems and applications                | 10.1.0.4   | Linux            |
 
 ### Access Policies
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses_
+Only the Jumpbox machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+- 20.106.159.198
 
-Machines within the network can only be accessed by _____.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
+Machines within the network can only be accessed by the jumpbox.
+- The jumpbox can access all the vms (web 1, web 2, Elk vm). The private IP address of the jumpbox is 10.0.0.4 while the public IP address is 20.106.159.198.
 
 A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
-|          |                     |                      |
+| Jump Box | No                  | local host IP        |
+| Web 1    | No                  | 10.0.0.4             |
+| Web 2    | No                  | 10.0.0.4             |
+| ELk vm   | No                  | 10.0.0.4             |
 
 ### Elk Configuration
 
@@ -72,7 +73,7 @@ The playbook implements the following tasks:
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
+![Docker_ps_output]()
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
