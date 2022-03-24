@@ -93,13 +93,16 @@ We have installed the following Beats on these machines:
 - Metricbeat
 
 These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+- Filebeat:
+    - collects log files and forwards them to elastcisearch for advanced processing.
+- Metricbeat:
+    - collects statistics and metrics logs from the operating system and from services running on the server.
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the _____ file to _____.
+- Copy the [ansible.cfg](https://github.com/nabouneama/Project-1-Elk-Stack/blob/main/Ansible/ansible.cfg) file to /etc/ansible.
 - Update the _____ file to include...
 - Run the playbook, and navigate to ____ to check that the installation worked as expected.
 
