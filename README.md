@@ -54,12 +54,12 @@ Machines within the network can only be accessed by the jumpbox.
 
 A summary of the access policies in place can be found in the table below.
 
-| Name     | Publicly Accessible | Allowed IP Addresses |
-|----------|---------------------|----------------------|
-| Jump Box | Yes                 | 20.106.159.198       |
-| Web 1    | No                  | 10.0.0.4             |
-| Web 2    | No                  | 10.0.0.4             |
-| ELk vm   | Yes                 | 20.106.159.198       |
+| Name     | Publicly Accessible | Allowed IP Addresses               |
+|----------|---------------------|------------------------------------|
+| Jump Box | Yes                 | 20.106.159.198                     |
+| Web 1    | No                  | 10.0.0.4                           |
+| Web 2    | No                  | 10.0.0.4                           |
+| ELk vm   | Yes                 | 20.106.159.198, 10.0.0.5, 10.0.0.6 |
 
 ### Elk Configuration
 
