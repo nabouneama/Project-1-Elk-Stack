@@ -56,10 +56,10 @@ A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | No                  | local host IP        |
+| Jump Box | Yes                 | 20.106.159.198       |
 | Web 1    | No                  | 10.0.0.4             |
 | Web 2    | No                  | 10.0.0.4             |
-| ELk vm   | No                  | 10.0.0.4             |
+| ELk vm   | Yes                 | 20.106.159.198       |
 
 ### Elk Configuration
 
@@ -110,7 +110,7 @@ SSH into the control node and follow the steps below:
  
 - Run the playbook, and navigate to http://52.225.73.227:5601/app/kibana to check that the installation worked as expected.
 
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+_Commands to download playbook and update files_
 - cp ansible.cfg /etc/ansible
 - nano hosts
     [webservers]
