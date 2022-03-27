@@ -86,6 +86,7 @@ The following screenshot displays the result of running `docker ps` after succes
 This ELK server is configured to monitor the following machines:
 - 10.0.0.5
 - 10.0.0.6
+
 ![Metricbeat Docker](https://github.com/nabouneama/Project-1-Elk-Stack/blob/main/Images/checking-metricbeat.png)
 
 We have installed the following Beats on these machines:
